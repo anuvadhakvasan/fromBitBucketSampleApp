@@ -1,0 +1,18 @@
+<h1><%= "Show Page for the  User: #{@user.name}" %> </h1>
+<%= "__________________________________________________________________________"%></br>	
+<% if @user.name == current_user.name %>
+     <%= render 'mform'%></br>
+     <%= render 'mfeed'%></br>
+
+<%else %>
+     <%= render 'follow_form'%></br>
+     <%= render 'mlist'%></br>
+
+<%end%>
+
+  <%= link_to "#{@user.name} has #{@user.following.count} following(s):", following_user_path(@user)  %></br>
+   <%= link_to "#{@user.name} has #{@user.followers.count} follower(s):", followers_user_path(@user)  %></br>
+ <%= link_to "List of Existing Users", users_path %></br>  
+ <%= "logged_in as: #{current_user.name}   "%></br>
+ <%= link_to "#{current_user.name}'s Show Page", user_path(current_user) unless @user.name == current_user.name%></br>
+ <%= link_to "LogOut", logout_path, :method => "delete" %>  

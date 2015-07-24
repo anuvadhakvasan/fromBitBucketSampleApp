@@ -1,0 +1,11 @@
+<h1> Microposts Feed(<%= @feed_items.count %>) </h1>
+	<% @feed_items.each do |m| %>
+	     <% if current_user?(m.user)%>
+	       <%= "#{m.user.name}:    #{m.content}" %><%= "--     " %><%= link_to "Delete", micropost_path(m), :method => "delete"%></br>
+	     <% else %>
+	       <%= "#{m.user.name}:    #{m.content}" %></br>
+	     <%end%>
+	   <%end%>
+	   
+<%= will_paginate @feed_items%>	   
+	  <%= "______________________________________________________________________________"%></br>

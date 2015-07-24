@@ -1,0 +1,14 @@
+<h1> All Users </h1>
+
+
+<% @users.each do |u| %>
+     <%= link_to "#{u.name}", user_path(u) %> 
+       <% if current_user.admin? && !current_user?(u) %>
+         | <%= link_to "delete", user_path(u), :method => "delete" %></br>
+       <% end %></br>
+   <% end %></br>
+   
+
+
+<%= will_paginate %>
+<%= link_to "Back To Home Page", root_path %>

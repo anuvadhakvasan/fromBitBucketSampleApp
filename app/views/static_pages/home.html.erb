@@ -1,0 +1,18 @@
+<h1> Welcome To SAMPLE_APP. </h1>
+
+<% if logged_in? %>  
+     <h2><%= "Logged_in as:   #{current_user.name}" %></h2></br>
+     <%= link_to "User's Page", user_path(current_user) %></br>
+     <%= link_to "LogOut", logout_path, :method => "delete" %>
+   <%else%>
+      <%= link_to "SignUp", signup_path %> 
+      <h4> OR </h4>
+      <%= link_to "Login", login_path %>
+      
+  
+
+  <% end%></br>
+  
+
+  
+  

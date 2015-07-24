@@ -1,0 +1,15 @@
+<h1>log in</h1>
+
+<%= form_for(:session, url: sessions_path) do |f| %>
+
+<p>
+  <%= f.label :name %> <br/>
+  <%= f.text_field :name %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+<%= link_to "Home Page", root_path %>
+<% end %>
+

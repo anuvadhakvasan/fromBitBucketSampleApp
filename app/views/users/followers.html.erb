@@ -1,0 +1,7 @@
+<h1><%="The under-mentioned user(s) are following #{@user.name}:"%></h1>
+
+<% @followers.each do |fl| %>
+  <h2><%= link_to "#{fl.name}", user_path(fl) %></h2>
+  <%end%>
+  
+ <%= link_to "#{@user.name}'s Show Page", user_path(@user) %> 

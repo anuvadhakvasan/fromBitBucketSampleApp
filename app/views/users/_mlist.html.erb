@@ -1,0 +1,8 @@
+<h1> Microposts List (<%= @microposts.count %>)</h1>
+	<% @microposts.each do |m| %>
+	  <%= "#{m.user.name}:    #{m.content}" %></br>
+	  
+	  <%end%>
+	  
+<%= will_paginate @microposts%>	 	  
+	  <%= "______________________________________________________________________________"%></br>
